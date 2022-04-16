@@ -1,27 +1,27 @@
 #include "../include/fractol.h"
 
-void	ft_putchar(char c)
+void	ft_putchar2(char c)
 {
 	write(1, &c, 1);
 	return;
 }
 
-void	ft_putnbr(int n)
+void	ft_putnbr2(int n)
 {
 	if (n < 0)
 	{
-		ft_putchar('-');
-		ft_putchar(-n);
+		ft_putchar2('-');
+		ft_putchar2(-n);
 	}
 	else if (n >= 10)
 	{
-		ft_putnbr(n/10);
-		ft_putchar(n%10 + '0');
+		ft_putnbr2(n/10);
+		ft_putchar2(n%10 + '0');
 		return;
 	}
 	else
 	{
-		ft_putchar(n%10 + '0');
+		ft_putchar2(n%10 + '0');
 		return;
 	}
 

@@ -72,8 +72,8 @@ void	start_mlx(struct mlx_s *mlx);
 void	maths_init(struct maths_s *maths);
 int	mandelbrotJulia_maths(struct maths_s *maths);
 int	burningship_maths(struct maths_s *maths);
-void	ft_putchar(char c);
-void	ft_putnbr(int n);
+void	ft_putchar2(char c);
+void	ft_putnbr2(int n);
 int	ft_strcmp(char *a, char *b);
 double	ft_atoi_float(char *str);
 
