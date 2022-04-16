@@ -11,8 +11,8 @@ void	init_main(int argc, char **argv, struct mlx_s *mlx, struct maths_s *maths)
 	{
 	     if (argc >= 4)
 	     {
-		    printf("%f\n",maths->pr = ft_atoi_float(argv[2]));
-		    printf("%f\n",maths->pi = ft_atoi_float(argv[3]));
+		    maths->pr = ft_atoi_float(argv[2]);
+		    maths->pi = ft_atoi_float(argv[3]);
 		    maths->arg = 1;
 	     }
 	     else
