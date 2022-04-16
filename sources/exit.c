@@ -2,8 +2,9 @@
 
 void	exit_frac(int status)
 {
-	printf("error: invalid parameter\n");
-	printf("1st arg: 'julia', 'mandelbrot' or 'burningship'\n");
+	printf("erreur : parametre invalide\n");
+	printf("1er arg: 'julia', 'mandelbrot' ou 'burningship'\n");
+	printf("2e et 3e arg : partie réelle et imaginaire de c pour la fractale de Julia\n");
 	exit(status);
 }
 

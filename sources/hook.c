@@ -2,8 +2,6 @@
 
 int	deal_key(int key, void *param)
 {
-	ft_putnbr2(key);
-	ft_putchar2('\n');
 	if (key == ESC)
 		exit_mlx(param);
 	if (key == plus || key == minus)
