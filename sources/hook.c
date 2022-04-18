@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hook.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abourrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/18 13:30:39 by abourrel          #+#    #+#             */
+/*   Updated: 2022/04/18 13:31:20 by abourrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/fractol.h"
 
 int	deal_key(int key, void *param)
@@ -17,7 +29,7 @@ int	deal_key(int key, void *param)
 	return (0);
 }
 
-int	deal_mouse(int mousecode, int x, int y, struct mlx_s *mlx)
+int	deal_mouse(int mousecode, int x, int y, mlx_t *mlx)
 {
 	if (mousecode == 4)
 		zoom(mlx->maths, 1.4);
@@ -26,7 +38,7 @@ int	deal_mouse(int mousecode, int x, int y, struct mlx_s *mlx)
 	if (mousecode == 1 || mousecode == 4 || mousecode == 5)
 		move(mlx->maths, mlx, x, y);
 	draw_image(mlx);
-	return(0);
+	return (0);
 }
 
 void	hook(struct mlx_s *mlx)
@@ -36,5 +48,3 @@ void	hook(struct mlx_s *mlx)
 	mlx_mouse_hook(mlx->win, deal_mouse, mlx);
 	mlx_loop(mlx->ptr);
 }
-
-

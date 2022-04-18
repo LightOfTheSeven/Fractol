@@ -70,11 +70,11 @@ void	move_with_arrows(struct mlx_s *mlx, int key);
 void	zoom(struct maths_s *maths, double i);
 void	start_mlx(struct mlx_s *mlx);
 void	maths_init(struct maths_s *maths);
-int	mandelbrotJulia_maths(struct maths_s *maths);
+int	mandelbrot_julia_maths(struct maths_s *maths);
 int	burningship_maths(struct maths_s *maths);
 void	ft_putchar2(char c);
 void	ft_putnbr2(int n);
 int	ft_strcmp(char *a, char *b);
-double	ft_atoi_float(char *str);
+double	ft_atod(char *str);
 
 #endif

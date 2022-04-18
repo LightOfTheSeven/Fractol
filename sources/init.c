@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abourrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/18 13:35:53 by abourrel          #+#    #+#             */
+/*   Updated: 2022/04/18 13:36:14 by abourrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/fractol.h"
 
 void	start_mlx(struct mlx_s *mlx)
@@ -10,7 +22,7 @@ void	start_mlx(struct mlx_s *mlx)
 	mlx->win = mlx_new_window(mlx->ptr, mlx->sizex, mlx->sizey, "fractol");
 	mlx->img = mlx_new_image(mlx->ptr, mlx->sizex, mlx->sizey);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->len, &mlx->endian);
-	return;
+	return ;
 }
 
 void	maths_init(struct maths_s *maths)
@@ -19,5 +31,5 @@ void	maths_init(struct maths_s *maths)
 	maths->movex = -0.5;
 	maths->movey = 0.25;
 	maths->zoom = 0.25;
-	return;
+	return ;
 }
