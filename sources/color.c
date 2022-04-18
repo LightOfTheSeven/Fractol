@@ -6,13 +6,13 @@
 /*   By: abourrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 13:07:29 by abourrel          #+#    #+#             */
-/*   Updated: 2022/04/18 13:18:42 by abourrel         ###   ########.fr       */
+/*   Updated: 2022/04/18 18:41:33 by abourrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	choice123(int i, rgb_t *rgb, int choice)
+int	choice123(int i, t_rgb *rgb, int choice)
 {
 	rgb->r = i * 2 * choice;
 	rgb->g = i * 2 * choice;
@@ -20,7 +20,7 @@ int	choice123(int i, rgb_t *rgb, int choice)
 	return (0);
 }
 
-int	choice456(int i, rgb_t *rgb, int choice)
+int	choice456(int i, t_rgb *rgb, int choice)
 {
 	rgb->r = i * 2 * (choice - 2);
 	rgb->g = 0;
@@ -28,7 +28,7 @@ int	choice456(int i, rgb_t *rgb, int choice)
 	return (0);
 }
 
-int	choice789(int i, rgb_t *rgb, int choice)
+int	choice789(int i, t_rgb *rgb, int choice)
 {	
 	if (choice == 7)
 	{
@@ -51,7 +51,7 @@ int	choice789(int i, rgb_t *rgb, int choice)
 	return (0);
 }
 
-int	choice10plus(int i, rgb_t *rgb, int choice)
+int	choice10plus(int i, t_rgb *rgb, int choice)
 {	
 	if (choice == 10)
 	{
@@ -74,9 +74,9 @@ int	choice10plus(int i, rgb_t *rgb, int choice)
 	return (0);
 }
 
-int	choice_rgb(mlx_t *mlx, int iteration)
+int	choice_rgb(t_mlx *mlx, int iteration)
 {
-	struct rgb_s	rgb;
+	struct s_rgb	rgb;
 
 	if (mlx->choice == 1 | mlx->choice == 13)
 	{

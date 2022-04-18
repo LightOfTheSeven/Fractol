@@ -6,34 +6,34 @@
 /*   By: abourrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 13:57:28 by abourrel          #+#    #+#             */
-/*   Updated: 2022/04/18 14:09:51 by abourrel         ###   ########.fr       */
+/*   Updated: 2022/04/18 18:02:51 by abourrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void	ft_putchar2(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return ;
 }
 
-void	ft_putnbr2(int n)
+void	ft_putnbr(int n)
 {
 	if (n < 0)
 	{
-		ft_putchar2('-');
-		ft_putchar2(-n);
+		ft_putchar('-');
+		ft_putchar(-n);
 	}
 	else if (n >= 10)
 	{
-		ft_putnbr2(n / 10);
-		ft_putchar2(n % 10 + '0');
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
 		return ;
 	}
 	else
 	{
-		ft_putchar2(n % 10 + '0');
+		ft_putchar(n % 10 + '0');
 		return ;
 	}
 }
@@ -48,15 +48,15 @@ int	ft_strcmp(char *a, char *b)
 		if (a[i] == b[i])
 			i++;
 		else
-			return(a[i] - b[i]);
+			return (a[i] - b[i]);
 	}
 	return (a[i] - b[i]);
 }
 
 double	ft_atod2(char *str, int i, double nb, double signe)
 {
-	int j;
-	
+	int	j;
+
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = (double)str[i] - 48.0 + nb * 10.0;
@@ -75,7 +75,6 @@ double	ft_atod2(char *str, int i, double nb, double signe)
 		j = j * 10.0;
 		i++;
 	}
-
 	return (nb * signe);
 }
 
@@ -83,13 +82,11 @@ double	ft_atod(char *str)
 {
 	double	signe;
 	double	nb;
-	int	i;
+	int		i;
 
 	signe = 1.0;
-
 	nb = 0.0;
 	i = 0;
-
 	if (!str)
 		return (1);
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)

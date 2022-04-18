@@ -1,8 +1,8 @@
 .PHONY: all clean fclean re bonus
 
 NAME	=	fractol
-CC		=	clang
-FLAGS	=	-O3 -Wall -Wextra -Werror
+CC		=	cc
+FLAGS	=	-Wall -Wextra -Werror
 INC		=	include
 OBJ		=	objs
 SRC		=	sources

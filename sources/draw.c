@@ -6,13 +6,13 @@
 /*   By: abourrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 13:09:55 by abourrel          #+#    #+#             */
-/*   Updated: 2022/04/18 13:46:14 by abourrel         ###   ########.fr       */
+/*   Updated: 2022/04/18 18:48:37 by abourrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void	pixel_draw(mlx_t *mlx, int x, int y, int color)
+void	pixel_draw(t_mlx *mlx, int x, int y, int color)
 {
 	char	*dst;
 
@@ -20,9 +20,9 @@ void	pixel_draw(mlx_t *mlx, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-void	draw_image(mlx_t *mlx)
+void	draw_image(t_mlx *mlx)
 {
-	struct mlx_s	temp;
+	struct s_mlx	temp;
 
 	mlx_destroy_image(mlx->ptr, mlx->img);
 	temp.img = mlx_new_image(mlx->ptr, mlx->sizex, mlx->sizey);
@@ -38,7 +38,7 @@ void	draw_image(mlx_t *mlx)
 	return ;
 }
 
-void	mandelbrot_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
+void	mandelbrot_draw(t_maths *maths, t_mlx *tempMlx, t_mlx *mlx)
 {
 	int	x;
 	int	y;
@@ -54,10 +54,10 @@ void	mandelbrot_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
 					* mlx->sizex) + maths->movex;
 			maths->pi = (y - mlx->sizey / 2) / (maths->zoom
 					* mlx->sizey) + maths->movey;
-			maths->oldRe = 0;
-			maths->oldIm = 0;
-			maths->newRe = 0;
-			maths->newIm = 0;
+			maths->oldre = 0;
+			maths->oldim = 0;
+			maths->newre = 0;
+			maths->newim = 0;
 			nb_iteration = mandelbrot_julia_maths(maths);
 			maths->color = choice_rgb(mlx, nb_iteration);
 			pixel_draw(tempMlx, x, y, maths->color);
@@ -67,7 +67,7 @@ void	mandelbrot_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
 	}
 }
 
-void	julia_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
+void	julia_draw(t_maths *maths, t_mlx *tempMlx, t_mlx *mlx)
 {
 	int	x;
 	int	y;
@@ -84,9 +84,9 @@ void	julia_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
 		y = -1;
 		while (++y < mlx->sizey)
 		{
-			maths->newRe = (x - mlx->sizex / 2) / (maths->zoom
+			maths->newre = (x - mlx->sizex / 2) / (maths->zoom
 					* mlx->sizex) + maths->movex;
-			maths->newIm = (y - mlx->sizey / 2) / (maths->zoom
+			maths->newim = (y - mlx->sizey / 2) / (maths->zoom
 					* mlx->sizey) + maths->movey;
 			nb_iteration = mandelbrot_julia_maths(maths);
 			maths->color = choice_rgb(mlx, nb_iteration);
@@ -95,7 +95,7 @@ void	julia_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
 	}
 }
 
-void	burningship_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
+void	burningship_draw(t_maths *maths, t_mlx *tempMlx, t_mlx *mlx)
 {
 	int	x;
 	int	y;
@@ -111,10 +111,10 @@ void	burningship_draw(maths_t *maths, mlx_t *tempMlx, mlx_t *mlx)
 					* mlx->sizex) + maths->movex;
 			maths->pi = (y - mlx->sizey / 2) / (maths->zoom
 					* mlx->sizey) + maths->movey;
-			maths->oldRe = 0;
-			maths->oldIm = 0;
-			maths->newRe = 0;
-			maths->newIm = 0;
+			maths->oldre = 0;
+			maths->oldim = 0;
+			maths->newre = 0;
+			maths->newim = 0;
 			nb_iteration = burningship_maths(maths);
 			maths->color = choice_rgb(mlx, nb_iteration);
 			pixel_draw(tempMlx, x, y, maths->color);
