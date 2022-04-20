@@ -6,7 +6,7 @@
 /*   By: abourrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 13:28:58 by abourrel          #+#    #+#             */
-/*   Updated: 2022/04/18 18:49:44 by abourrel         ###   ########.fr       */
+/*   Updated: 2022/04/19 12:10:49 by abourrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char *c)
 	int	i;
 
 	i = 0;
-	while(c[i])
+	while (c[i])
 	{
 		ft_putchar(c[i]);
 		i++;
@@ -30,7 +30,7 @@ void	exit_frac(int status)
 	ft_putstr("1er arg: 'julia', 'mandelbrot' ou 'burningship'\n");
 	ft_putstr("2e et 3e arg : partie réelle et imaginaire de c");
 	ft_putstr(" pour la fractale de Julia\n");
-	exit(status);
+	exit (status);
 }
 
 int	exit_mlx(t_mlx *mlx)
